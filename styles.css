@@ -110,6 +110,101 @@ a:focus-visible {
   margin-top: 0.15rem;
 }
 
+/* Studio identity (sezione contatti) */
+.studio-identity {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 1.25rem;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+@media (min-width: 640px) {
+  .studio-identity {
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    padding: 1.75rem 1.75rem;
+  }
+}
+
+.studio-identity__photo {
+  margin: 0;
+  max-width: 12rem;
+  justify-self: center;
+}
+
+@media (min-width: 640px) {
+  .studio-identity__photo {
+    justify-self: start;
+  }
+}
+
+.studio-identity__photo img {
+  width: 100%;
+  max-height: 18rem;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 28px var(--shadow);
+}
+
+.studio-identity__denomination {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.studio-identity__role {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+.studio-fiscal {
+  margin: 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.studio-fiscal__row {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.5rem 1rem;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 400px) {
+  .studio-fiscal__row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+.studio-fiscal__row dt {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.studio-fiscal__row dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  font-weight: 600;
+}
+
 /* Nav toggle (mobile) */
 .nav-toggle {
   display: flex;
@@ -726,13 +821,4 @@ main {
   font-size: 0.8rem;
   margin: 0.75rem 0 0;
   color: var(--ink-muted);
-}
-
-.map-actions {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-}
-
-.map-actions a {
-  font-weight: 600;
 }
