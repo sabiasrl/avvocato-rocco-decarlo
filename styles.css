@@ -168,41 +168,57 @@ a:focus-visible {
   line-height: 1.5;
 }
 
-.studio-fiscal {
+.studio-identity__channels {
+  list-style: none;
   margin: 0;
   padding: 1rem 0 0;
   border-top: 1px solid var(--line);
 }
 
-.studio-fiscal__row {
-  display: grid;
-  grid-template-columns: 8.5rem 1fr;
-  gap: 0.5rem 1rem;
-  padding: 0.5rem 0;
+.studio-identity__channels li + li {
+  margin-top: 0.65rem;
+}
+
+.studio-channel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-size: 0.95rem;
-}
-
-@media (max-width: 400px) {
-  .studio-fiscal__row {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
-  }
-}
-
-.studio-fiscal__row dt {
-  margin: 0;
-  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.studio-channel:hover,
+.studio-channel:focus-visible {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.studio-channel:hover span,
+.studio-channel:focus-visible span {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.studio-channel .icon-channel {
+  flex-shrink: 0;
   color: var(--ink-muted);
 }
 
-.studio-fiscal__row dd {
-  margin: 0;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink);
-  font-weight: 600;
+.studio-channel:hover .icon-channel,
+.studio-channel:focus-visible .icon-channel {
+  color: var(--accent);
+}
+
+.studio-channel--wa .icon-wa {
+  color: #25d366;
+}
+
+.studio-channel--wa:hover .icon-wa,
+.studio-channel--wa:focus-visible .icon-wa {
+  color: #128c4a;
 }
 
 /* Nav toggle (mobile) */
