@@ -1,0 +1,6 @@
+# https://avvocatoroccodecarlo.it
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://avvocatoroccodecarlo.it/sitemap.xml

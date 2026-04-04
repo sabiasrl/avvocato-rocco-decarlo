@@ -518,6 +518,15 @@ main {
   margin: 0 0 2rem;
 }
 
+.territory-heading {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 1.75rem 0 0.65rem;
+  line-height: 1.3;
+}
+
 /* Two-column layouts */
 .split {
   display: grid;
