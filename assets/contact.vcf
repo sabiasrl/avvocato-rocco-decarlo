@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Avv. Rocco De Carlo
+N:Carlo\;Avv. Rocco De\;\;\;
+ORG:Avv. Rocco De Carlo
+TITLE:Avvocato
+TEL;TYPE=WORK,VOICE:+393384814593
+EMAIL;TYPE=INTERNET,PREF:avvdecarlo@libero.it
+URL:https://avvocatoroccodecarlo.it/
+ADR;TYPE=WORK:;;Contrada Piano San Nicola 2;Potenza;PZ;85100;Italy
+LABEL;TYPE=WORK:Contrada Piano San Nicola 2\, 85100 Potenza\, (PZ)\, Italy
+NOTE:Avv. Rocco De Carlo\, avvocato in diritto civile e penale a Piano San Nicola\, Potenza. Previdenza sociale. Studio legale per Potenza e provincia: Avigliano\, Melfi\, Acerenza\, Rionero in Vulture\, Pietragalla\, Ruoti e comuni limitrofi. Sito: https://avvocatoroccodecarlo.it/
+END:VCARD
