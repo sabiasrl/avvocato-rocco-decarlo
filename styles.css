@@ -225,21 +225,43 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  flex-wrap: wrap;
 }
 
 .studio-vcard-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  overflow: hidden;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.55rem;
   text-decoration: none;
   flex-shrink: 0;
   background: transparent;
   border: 0;
   box-shadow: none;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.25;
+  max-width: 14rem;
+}
+
+.studio-vcard-btn:hover,
+.studio-vcard-btn:focus-visible {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.studio-vcard-btn:hover .studio-vcard-btn__label,
+.studio-vcard-btn:focus-visible .studio-vcard-btn__label {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.studio-vcard-btn__img-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .studio-vcard-btn__icon {
@@ -247,6 +269,89 @@ a:focus-visible {
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.copy-email-btn {
+  box-sizing: border-box;
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  flex-wrap: nowrap;
+  border: none;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink-muted);
+  opacity: 0.55;
+  cursor: pointer;
+  transition: color 0.2s var(--ease), opacity 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+
+.copy-email-btn__copied {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.copy-email-btn.is-copied .copy-email-btn__copied {
+  display: inline;
+}
+
+.copy-email-btn.is-copied {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.copy-email-btn .icon-channel {
+  flex-shrink: 0;
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.copy-email-btn:hover,
+.copy-email-btn:focus-visible {
+  color: var(--accent);
+  opacity: 1;
+  background: transparent;
+}
+
+.copy-email-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.copy-email-btn--compact {
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+}
+
+.copy-email-btn--compact .icon-channel {
+  width: 10px;
+  height: 10px;
+}
+
+.copy-email-btn--compact .copy-email-btn__copied {
+  font-size: 0.52rem;
+  letter-spacing: 0.02em;
+}
+
+.contact-email-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
 }
 
 /* Nav toggle (mobile) */

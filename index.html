@@ -400,18 +400,20 @@
                         href="assets/contact.vcf"
                         download="contact.vcf"
                         type="text/vcard"
-                        aria-label="Aggiungi in rubrica"
-                        title="Aggiungi in rubrica"
+                        title="aggiungi in rubrica"
                       >
-                        <img
-                          class="studio-vcard-btn__icon"
-                          src="assets/contacts.png"
-                          alt="Aggiungi in rubrica"
-                          width="44"
-                          height="44"
-                          loading="lazy"
-                          decoding="async"
-                        />
+                        <span class="studio-vcard-btn__img-wrap">
+                          <img
+                            class="studio-vcard-btn__icon"
+                            src="assets/contacts.png"
+                            alt=""
+                            width="44"
+                            height="44"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </span>
+                        <span class="studio-vcard-btn__label">Aggiungi in rubrica</span>
                       </a>
                     </div>
                   </li>
@@ -440,26 +442,51 @@
                     </a>
                   </li>
                   <li>
-                    <a
-                      class="studio-channel"
-                      href="mailto:avvdecarlo@libero.it"
-                    >
-                      <svg
-                        class="icon-channel icon-channel--mail"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="22"
-                        height="22"
-                        aria-hidden="true"
-                        focusable="false"
+                    <div class="studio-channel-row">
+                      <a
+                        class="studio-channel"
+                        href="mailto:avvdecarlo@libero.it"
                       >
-                        <path
-                          fill="currentColor"
-                          d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"
-                        />
-                      </svg>
-                      <span>avvdecarlo@libero.it</span>
-                    </a>
+                        <svg
+                          class="icon-channel icon-channel--mail"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="22"
+                          height="22"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"
+                          />
+                        </svg>
+                        <span>avvdecarlo@libero.it</span>
+                      </a>
+                      <button
+                        type="button"
+                        class="copy-email-btn"
+                        data-copy="avvdecarlo@libero.it"
+                        aria-label="Copia indirizzo email"
+                        title="Copia email"
+                      >
+                        <svg
+                          class="icon-channel icon-channel--copy"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="22"
+                          height="22"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                          />
+                        </svg>
+                        <span class="copy-email-btn__copied" aria-hidden="true">copied</span>
+                      </button>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -503,7 +530,32 @@
                   </li>
                   <li>
                     <strong>Email</strong>
-                    <a href="mailto:avvdecarlo@libero.it">avvdecarlo@libero.it</a>
+                    <div class="contact-email-row">
+                      <a href="mailto:avvdecarlo@libero.it">avvdecarlo@libero.it</a>
+                      <button
+                        type="button"
+                        class="copy-email-btn copy-email-btn--compact"
+                        data-copy="avvdecarlo@libero.it"
+                        aria-label="Copia indirizzo email"
+                        title="Copia email"
+                      >
+                        <svg
+                          class="icon-channel icon-channel--copy"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="22"
+                          height="22"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                          />
+                        </svg>
+                        <span class="copy-email-btn__copied" aria-hidden="true">copiato</span>
+                      </button>
+                    </div>
                   </li>
                   <li>
                     <strong>PEC</strong>
@@ -665,6 +717,60 @@
 
         window.matchMedia("(min-width: 900px)").addEventListener("change", function (e) {
           if (e.matches) setOpen(false);
+        });
+      })();
+
+      (function () {
+        var labelCopy = "Copia indirizzo email";
+        var labelDone = "Email copiata negli appunti";
+        var titleCopy = "Copia email";
+        var titleDone = "copiato";
+
+        function copyFallback(text) {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+          } finally {
+            document.body.removeChild(ta);
+          }
+        }
+
+        document.querySelectorAll("[data-copy]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var text = btn.getAttribute("data-copy");
+            if (!text) return;
+
+            function flashOk() {
+              btn.setAttribute("aria-label", labelDone);
+              btn.setAttribute("title", titleDone);
+              btn.classList.add("is-copied");
+              window.setTimeout(function () {
+                btn.setAttribute("aria-label", labelCopy);
+                btn.setAttribute("title", titleCopy);
+                btn.classList.remove("is-copied");
+              }, 2000);
+            }
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(flashOk).catch(function () {
+                try {
+                  copyFallback(text);
+                  flashOk();
+                } catch (e) {}
+              });
+            } else {
+              try {
+                copyFallback(text);
+                flashOk();
+              } catch (e) {}
+            }
+          });
         });
       })();
     </script>
